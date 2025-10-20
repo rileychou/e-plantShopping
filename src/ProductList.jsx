@@ -267,6 +267,9 @@ function ProductList({ onHomeClick }) {
             [plant.name]: true // need the square brackets because keys must be identifiers or strings/numbers, not expressions
         }));
     };
+    const calculateTotalQuantity = () => {
+        return CartItems ? CartItems.reduce((total, item) => total + item.quantity, 0) : 0;
+    };
     return (
         <div>
             <div className="navbar" style={styleObj}>
